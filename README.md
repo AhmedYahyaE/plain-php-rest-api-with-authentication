@@ -49,7 +49,7 @@ All the application routes are defined in the [index.php](public/index.php) file
 
 1- Register/Sign up/Create a new user (POST):
 
-POST /v1/users
+**POST /v1/users**
 
 ** "Contetn-Type" HTTP Request Header must be set to "application/json".
 
@@ -57,7 +57,7 @@ POST /v1/users
 
 2- Log in and Create a new session with a new Access Token and a new Refresh Token (POST):
 
-POST /v1/sessions
+**POST /v1/sessions**
 
 ** "Contetn-Type" HTTP Request Header must be set to "application/json".
 
@@ -65,7 +65,7 @@ POST /v1/sessions
 
 3- Log out and delete a session (DELETE):
 
-DELETE /v1/sessions/{sessionid}
+**DELETE /v1/sessions/{sessionid}**
 
 ** {sessionid} Query String Parameter in the URL must be provided.
 
@@ -73,7 +73,7 @@ DELETE /v1/sessions/{sessionid}
 
 4- Refresh a session (update a session to get a new access token and a new refresh token instead of the expired access token) (PATCH):
 
-PATCH /v1/sessions/{sessionid}
+**PATCH /v1/sessions/{sessionid}**
 
 ** {sessionid} Query String Parameter in the URL must be provided.
 
@@ -85,7 +85,7 @@ PATCH /v1/sessions/{sessionid}
 
 5- Create a new task (POST):
 
-POST /v1/tasks
+**POST /v1/tasks**
 
 ** "Authorization" HTTP Request Header (Access Token) must be provided.
 
@@ -95,13 +95,13 @@ POST /v1/tasks
 
 6- Get ALL tasks that belong to the authenticated/logged-in user (GET):
 
-GET /v1/tasks
+**GET /v1/tasks**
 
 ** "Authorization" HTTP Request Header (Access Token) must be provided.
 
 7- Get a Single task (GET):
 
-GET /v1/tasks/{taskid}
+**GET /v1/tasks/{taskid}**
 
 ** {taskid} Query String Parameter in the URL must be provided.
 
@@ -109,7 +109,7 @@ GET /v1/tasks/{taskid}
 
 8- Delete a single task (DELETE) (that belongs to the authenticated/logged-in user): (this also deletes all of the associated images and as well deletes the task images folder inside the 'taskimages' folder)
 
-DELETE /v1/tasks/{taskid}
+**DELETE /v1/tasks/{taskid}**
 
 ** {taskid} Query String Parameter in the URL must be provided.
 
@@ -117,7 +117,7 @@ DELETE /v1/tasks/{taskid}
 
 9- Update a single task (PATCH):
 
-PATCH /v1/tasks/{taskid}
+**PATCH /v1/tasks/{taskid}**
 
 ** {taskid} Query String Parameter in the URL must be provided.
 
@@ -129,7 +129,7 @@ PATCH /v1/tasks/{taskid}
 
 10- Get all 'Complete' tasks (GET):
 
-GET /v1/tasks/complete
+**GET /v1/tasks/complete**
 
 ** {complete} or {incomplete} Query String Parameter in the URL must be provided.
 
@@ -137,7 +137,7 @@ GET /v1/tasks/complete
 
 11 - Get all 'Incomplete' tasks (GET):
 
-GET /v1/tasks/incomplete
+**GET /v1/tasks/incomplete**
 
 ** {complete} or {incomplete} Query String Parameter in the URL must be provided.
 
@@ -145,7 +145,7 @@ GET /v1/tasks/incomplete
 
 12- Get All tasks with Pagination (tasks that belong to the authenticated/logged-in user) (GET):
 
-GET /v1/tasks/page/{pagenumber}
+**GET /v1/tasks/page/{pagenumber}**
 
 ** {page} Query String Parameter and its value {pagenumber} in the URL must be provided.
 
@@ -153,7 +153,7 @@ GET /v1/tasks/page/{pagenumber}
 
 13- Create (Upload) an image for a certain task (of the authenticated/logged-in user):
 
-POST /tasks/{taskid}/images
+**POST /tasks/{taskid}/images**
 
 ** {taskid} Query String Parameter in the URL must be provided.
 
@@ -165,7 +165,7 @@ POST /tasks/{taskid}/images
 
 14- Get (Download) an actual physical image of a certain task (of the authenticated/logged-in user):
 
-GET /tasks/{taskid}/images/{imageid}
+**GET /tasks/{taskid}/images/{imageid}**
 
 ** {taskid} and {imageid} Query String Parameters in the URL must be provided.
 
@@ -173,7 +173,7 @@ GET /tasks/{taskid}/images/{imageid}
 
 15- Delete an actual physical image of a certain task (of the authenticated/logged-in user):
 
-DELETE /tasks/{taskid}/images/{imageid}
+**DELETE /tasks/{taskid}/images/{imageid}**
 
 ** {taskid} and {imageid} Query String Parameters in the URL must be provided.
 
@@ -181,7 +181,7 @@ DELETE /tasks/{taskid}/images/{imageid}
 
 16- Get a certain image Attributes (of a certain task that belongs to the authenticated/logged-in user):
 
-GET /tasks/{taskid}/images/{imageid}/attributes
+**GET /tasks/{taskid}/images/{imageid}/attributes**
 
 ** The three of {taskid}, {imageid} and {attributes} Query String Parameters in the URL must be provided.
 
@@ -189,7 +189,7 @@ GET /tasks/{taskid}/images/{imageid}/attributes
 
 17- Update a certain image Attributes (of a certain task that belongs to the authenticated/logged-in user):
 
-PATCH /tasks/{taskid}/images/{imageid}/attributes
+**PATCH /tasks/{taskid}/images/{imageid}/attributes**
 
 ** The three of {taskid}, {imageid} and {attributes} Query String Parameters in the URL must be provided.
 
