@@ -48,100 +48,155 @@ All the application routes are defined in the [index.php](public/index.php) file
 > ***\*\* Check the API Collection on my Postman Profile: https://www.postman.com/ahmed-yahya/workspace/my-public-portfolio-postman-workspace/collection/28181483-41805882-779b-42f7-a246-e96e32633ff5***
 
 1- Register/Sign up/Create a new user (POST):
+
 POST /v1/users
+
 ** "Contetn-Type" HTTP Request Header must be set to "application/json".
+
 ** Mandatory fields in the JSON HTTP Requet Body: fullname, username and password.
 
 2- Log in and Create a new session with a new Access Token and a new Refresh Token (POST):
+
 POST /v1/sessions
+
 ** "Contetn-Type" HTTP Request Header must be set to "application/json".
+
 ** Mandatory fields in the JSON HTTP Request Body: username and password.
 
 3- Log out and delete a session (DELETE):
+
 DELETE /v1/sessions/{sessionid}
+
 ** {sessionid} Query String Parameter in the URL must be provided.
+
 ** "Authorization" HTTP Request Header (Access Token) must be provided.
 
 4- Refresh a session (update a session to get a new access token and a new refresh token instead of the expired access token) (PATCH):
+
 PATCH /v1/sessions/{sessionid}
+
 ** {sessionid} Query String Parameter in the URL must be provided.
-** "Contetn-Type" HTTP Request Header must be set to "application/json"
+
+** "Contetn-Type" HTTP Request Header must be set to "application/json".
+
 ** "Refresh Token" must be provided as JSON in the HTTP Request Body (Not as an 'Authorization' HTTP Request Header).
+
 ** "Access Token" must be provided as an "Authorization" HTTP Request Header.
 
 5- Create a new task (POST):
+
 POST /v1/tasks
+
 ** "Authorization" HTTP Request Header (Access Token) must be provided.
+
 ** "Contetn-Type" HTTP Request Header must be set to "application/json".
+
 ** Mandatory fields in the JSON HTTP Request Body: `title` and `completed`.
 
 6- Get ALL tasks that belong to the authenticated/logged-in user (GET):
+
 GET /v1/tasks
+
 ** "Authorization" HTTP Request Header (Access Token) must be provided.
 
 7- Get a Single task (GET):
+
 GET /v1/tasks/{taskid}
+
 ** {taskid} Query String Parameter in the URL must be provided.
+
 ** "Authorization" HTTP Request Header (Access Token) must be provided.
 
-8- Delete a single task (DELETE) (the task must belong to the authenticated/logged-in user): (this also deletes all of the associated images and as well deletes the task images folder inside the 'taskimages' folder)
+8- Delete a single task (DELETE) (that belongs to the authenticated/logged-in user): (this also deletes all of the associated images and as well deletes the task images folder inside the 'taskimages' folder)
+
 DELETE /v1/tasks/{taskid}
+
 ** {taskid} Query String Parameter in the URL must be provided.
+
 ** "Authorization" HTTP Request Header (Access Token) must be provided.
 
 9- Update a single task (PATCH):
+
 PATCH /v1/tasks/{taskid}
+
 ** {taskid} Query String Parameter in the URL must be provided.
+
 ** "Authorization" HTTP Request Header (Access Token) must be provided.
+
 ** "Contetn-Type" HTTP Request Header must be set to "application/json".
+
 ** Mandatory fields in the JSON HTTP Request Body: At least one of the fields: `title`, `description`, `deadline` and `completed`.
 
-
-** If the {complete} or {incomplete} Query String Parameter is provided in the URL, we handle returning all 'completed' 'Y' tasks or 'incompleted' 'N' tasks
 10- Get all 'Complete' tasks (GET):
+
 GET /v1/tasks/complete
+
 ** {complete} or {incomplete} Query String Parameter in the URL must be provided.
+
 ** "Authorization" HTTP Request Header (Access Token) must be provided.
 
-
-** If the {complete} or {incomplete} Query String Parameter is provided in the URL, we handle returning all 'completed' 'Y' tasks or 'incompleted' 'N' tasks
 11 - Get all 'Incomplete' tasks (GET):
+
 GET /v1/tasks/incomplete
+
 ** {complete} or {incomplete} Query String Parameter in the URL must be provided.
+
 ** "Authorization" HTTP Request Header (Access Token) must be provided.
 
 12- Get All tasks with Pagination (tasks that belong to the authenticated/logged-in user) (GET):
+
 GET /v1/tasks/page/{pagenumber}
+
 ** {page} Query String Parameter and its value {pagenumber} in the URL must be provided.
+
 ** "Authorization" HTTP Request Header (Access Token) must be provided.
 
 13- Create (Upload) an image for a certain task (of the authenticated/logged-in user):
+
 POST /tasks/{taskid}/images
+
 ** {taskid} Query String Parameter in the URL must be provided.
+
 ** "Authorization" HTTP Request Header (Access Token) must be provided.
+
 ** "multipart/form-data; boundary=" HTTP Request Header must be provided.
+
 ** In Postman, click on "Body", then "form-data", then enter two fields: "attributes" and "imagefile" fields. For the "attributes" field, set it to "Text" and enter the Value as JSON (Example: {"title": "Image Title 1", "filename": "carimage"}) and don't mention the file extension in the file name. For the"imagefile" field, set it to "File", and upload an image file in the Value. Only .jgp, .gif or .png images are allowed.
 
 14- Get (Download) an actual physical image of a certain task (of the authenticated/logged-in user):
+
 GET /tasks/{taskid}/images/{imageid}
+
 ** {taskid} and {imageid} Query String Parameters in the URL must be provided.
+
 ** "Authorization" HTTP Request Header (Access Token) must be provided.
 
 15- Delete an actual physical image of a certain task (of the authenticated/logged-in user):
+
 DELETE /tasks/{taskid}/images/{imageid}
+
 ** {taskid} and {imageid} Query String Parameters in the URL must be provided.
+
 ** "Authorization" HTTP Request Header (Access Token) must be provided.
 
 16- Get a certain image Attributes (of a certain task that belongs to the authenticated/logged-in user):
+
 GET /tasks/{taskid}/images/{imageid}/attributes
+
 ** The three of {taskid}, {imageid} and {attributes} Query String Parameters in the URL must be provided.
+
 ** "Authorization" HTTP Request Header (Access Token) must be provided.
 
 17- Update a certain image Attributes (of a certain task that belongs to the authenticated/logged-in user):
+
 PATCH /tasks/{taskid}/images/{imageid}/attributes
+
 ** The three of {taskid}, {imageid} and {attributes} Query String Parameters in the URL must be provided.
+
 ** "Authorization" HTTP Request Header (Access Token) must be provided.
+
 ** "Contetn-Type" HTTP Request Header must be set to "application/json".
+
 ** Mandatory fields in the JSON HTTP Request Body: At least one of the two fields: `title` and `filename`. N.B. File Name must be provided WITHOUT the file extension.
 
 ***\*\* Note: You can test the API Endpoints using Postman. Here is the Postman Collection .json file [Postman Collection](<Postman Collection of API Endpoints/Plain PHP REST API with Token-based Authentication and Image Uploading.postman_collection.json>) you can download and import in your Postman.***
