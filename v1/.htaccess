@@ -1,0 +1,60 @@
+# CORS options:
+<IfModule mod_headers.c>
+    Header set Access-Control-Allow-Origin "*"
+</IfModule>
+
+php_flag display_errors on
+
+
+# Apache by default prevents/strips the AUTHORIZATION HTTP header from being sent, so we have to enable it:
+# Fix for Apache AUTHORIZATION HTTP header as it's stripped by default for security and should be enabled explicitly when needed:
+SetEnvIf Authorization .+ HTTP_AUTHORIZATION=$0
+
+
+# https://docs.oracle.com/cd/B14099_19/web.1012/q20206/mod/core.html#options
+Options -Indexes
+
+
+# Turn on the rewriting engine
+RewriteEngine On
+# If the browser has a URL of anything doesn't exist whether it's a d (directory) or f (folder), then proceed the rule below:
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+
+
+
+# Our routes (API Endpoints):
+# Note: ^ and $ are REGUALR EXPRESSION METACHARACTERS
+
+# Tasks:
+RewriteRule ^tasks/([0-9]+)$         controller/task.php?taskid=$1   [L]
+
+RewriteRule ^tasks/complete$         controller/task.php?completed=Y [L]
+RewriteRule ^tasks/incomplete$       controller/task.php?completed=N [L]
+
+# RewriteRule ^tasks/page/(.+)$        controller/task.php?page=$1     [L]
+RewriteRule ^tasks/page/([0-9]+)$    controller/task.php?page=$1     [L]
+RewriteRule ^tasks$                  controller/task.php             [L]
+
+
+# Users:
+RewriteRule ^users$                  controller/users.php            [L]
+
+
+
+# Authentication:
+RewriteRule ^sessions$               controller/sessions.php         [L]
+RewriteRule ^sessions/([0-9]+)$ controller/sessions.php?sessionid=$1 [L]
+
+
+
+# Images:
+
+# Get or Update a certain image Attributes (GET or PATCH)
+RewriteRule ^tasks/([0-9]+)/images/([0-9]+)/attributes$ controller/images.php?taskid=$1&imageid=$2&attributes=true [L]
+
+# Handle Download a certain actual physical image of a certain (id) task (GET)    Or    Delete a certain physical image of a certain task (DELETE)
+RewriteRule ^tasks/([0-9]+)/images/([0-9]+)$            controller/images.php?taskid=$1&imageid=$2                 [L]
+
+# Handle Creating (Uploading) an image for a certain task (POST)
+RewriteRule ^tasks/([0-9]+)/images$                     controller/images.php?taskid=$1                            [L]

@@ -1,0 +1,620 @@
+{
+	"info": {
+		"_postman_id": "41805882-779b-42f7-a246-e96e32633ff5",
+		"name": "Plain PHP REST API with Token-based Authentication and Image Uploading",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "28181483",
+		"_collection_link": "https://www.postman.com/ahmed-yahya/workspace/my-public-portfolio-postman-workspace/collection/28181483-41805882-779b-42f7-a246-e96e32633ff5?action=share&creator=28181483&source=collection_link"
+	},
+	"item": [
+		{
+			"name": "Register/Sign up/Create a new user - POST",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"fullname\": \"Ahmed Yahya\",\r\n    \"username\": \"Ahmed\",\r\n    \"password\": \"123456\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1/v1/users",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"path": [
+						"v1",
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Log in / Create a new Session, new Access Token and new Refresh Token - POST",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"Ahmed\",\r\n    \"password\": \"123456\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1/v1/sessions",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"path": [
+						"v1",
+						"sessions"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Log out/Delete a session - POST",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"content-type": true
+				}
+			},
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "ODVkMTkzYWFlZmZiZTk1YWY5MDJmYWFlZDc5NGMzYjU1YWJmODA1NDIyOGIxNmYxMTY1NzUwMDYyNA==",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1/v1/sessions/12",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"path": [
+						"v1",
+						"sessions",
+						"12"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Refresh a session (Get a new Access Token and Refresh Token instead of the expired Access Token) - PATCH",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"content-type": true
+				}
+			},
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Y2I0NDNiOTg3NTE0MWNlYWY1ODM1NzkzNmY5OTNmZDE5ZDkwMWE4ZTIwMjg5YTM2MTY4ODc0NjUyNA==",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"refresh_token\": \"MmI4M2E3ZmFlNzcyZDdjMWM3NjgxNmU0MzhlZDc3OGM2ODI1MjM1ZGJmOTg4N2U5MTY4ODc0NjUyNA==\"\r\n}"
+				},
+				"url": {
+					"raw": "http://127.0.0.1/v1/sessions/35",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"path": [
+						"v1",
+						"sessions",
+						"35"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create a task - POST",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "MTQzZjZhM2YzMGRlZDdiNzM3M2Q5ODQzNTkwM2E1ZWQ3NTBmMGRmODMzOGNiMTJiMTY4ODU5ODI4MQ==",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"A task title example\",\r\n    \"completed\": \"Y\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1/v1/tasks",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"path": [
+						"v1",
+						"tasks"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All tasks that belong to the authenticated/logged-in user - GET",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "ZTgyOWRlMmM4MTM3OGJhNzU3MjFjOTkwMjdiZjdlYmE0NmY4ODBhNzcxNTk2MWE4MTY4ODY2MzU5NA==",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1/v1/tasks",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"path": [
+						"v1",
+						"tasks"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get a Single task - GET",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "ZTgyOWRlMmM4MTM3OGJhNzU3MjFjOTkwMjdiZjdlYmE0NmY4ODBhNzcxNTk2MWE4MTY4ODY2MzU5NA==",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1/v1/tasks/8",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"path": [
+						"v1",
+						"tasks",
+						"8"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete a task (and delete its related images and delete its tasks folder inside the 'taskimages' folder) - DELETE",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "ZTgyOWRlMmM4MTM3OGJhNzU3MjFjOTkwMjdiZjdlYmE0NmY4ODBhNzcxNTk2MWE4MTY4ODY2MzU5NA==",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1/v1/tasks/5",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"path": [
+						"v1",
+						"tasks",
+						"5"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update a task (that belongs to the authenticated/logged-in user) - PATCH",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "ZTgyOWRlMmM4MTM3OGJhNzU3MjFjOTkwMjdiZjdlYmE0NmY4ODBhNzcxNTk2MWE4MTY4ODY2MzU5NA==",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"description\": \"New Task 8 Description updated\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1/v1/tasks/8",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"path": [
+						"v1",
+						"tasks",
+						"8"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all Complete tasks (of the authenticated/logged-in user) - GET",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "ZTgyOWRlMmM4MTM3OGJhNzU3MjFjOTkwMjdiZjdlYmE0NmY4ODBhNzcxNTk2MWE4MTY4ODY2MzU5NA==",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1/v1/tasks/complete",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"path": [
+						"v1",
+						"tasks",
+						"complete"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all Incomplete tasks (of the authenticated/logged-in user) - GET",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "ZTgyOWRlMmM4MTM3OGJhNzU3MjFjOTkwMjdiZjdlYmE0NmY4ODBhNzcxNTk2MWE4MTY4ODY2MzU5NA==",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1/v1/tasks/incomplete",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"path": [
+						"v1",
+						"tasks",
+						"incomplete"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All tasks with Pagination(URL must contain the 'page' Query String Parameter) - GET",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "ZTgyOWRlMmM4MTM3OGJhNzU3MjFjOTkwMjdiZjdlYmE0NmY4ODBhNzcxNTk2MWE4MTY4ODY2MzU5NA==",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1/v1/tasks/page/1",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"path": [
+						"v1",
+						"tasks",
+						"page",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create/Upload an Image for a certain task (of the authenticated/logged-in user) - POST",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "ZThlZGFhZmM3ZWQ0MDQzZmE1ZTE5YzBmMDJiZGUxNjUxMjIxNzQ0N2I1YTU3OTM3MTY4ODc1ODk4OQ==",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "attributes",
+							"value": "{\"title\": \"Study some topics 2\", \"filename\": \"study-2\"}",
+							"type": "text"
+						},
+						{
+							"key": "imagefile",
+							"type": "file",
+							"src": "/C:/study.jpg"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1/v1/tasks/7/images",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"path": [
+						"v1",
+						"tasks",
+						"7",
+						"images"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get/Download an actual physical imagae binary file of a certain task - GET",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "ZThlZGFhZmM3ZWQ0MDQzZmE1ZTE5YzBmMDJiZGUxNjUxMjIxNzQ0N2I1YTU3OTM3MTY4ODc1ODk4OQ==",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"url": {
+					"raw": "http://127.0.0.1/v1/tasks/7/images/16",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"path": [
+						"v1",
+						"tasks",
+						"7",
+						"images",
+						"16"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete an actual physical image of a certain task - DELETE",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "ZThlZGFhZmM3ZWQ0MDQzZmE1ZTE5YzBmMDJiZGUxNjUxMjIxNzQ0N2I1YTU3OTM3MTY4ODc1ODk4OQ==",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1/v1/tasks/7/images/17",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"path": [
+						"v1",
+						"tasks",
+						"7",
+						"images",
+						"17"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get a certain image Attributes (of a certain task that belongs to the authenticated/logged-in user) - GET",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "ZThlZGFhZmM3ZWQ0MDQzZmE1ZTE5YzBmMDJiZGUxNjUxMjIxNzQ0N2I1YTU3OTM3MTY4ODc1ODk4OQ==",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "",
+							"value": "",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1/v1/tasks/8/images/15/attributes",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"path": [
+						"v1",
+						"tasks",
+						"8",
+						"images",
+						"15",
+						"attributes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update a certain image Attributes (of a certain task that belongs to the authenticated/logged-in user) - PATCH",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "ZThlZGFhZmM3ZWQ0MDQzZmE1ZTE5YzBmMDJiZGUxNjUxMjIxNzQ0N2I1YTU3OTM3MTY4ODc1ODk4OQ==",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"Do the homework UPDATED\",\r\n    \"filename\": \"homework-UPDATED\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1/v1/tasks/8/images/15/attributes",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"path": [
+						"v1",
+						"tasks",
+						"8",
+						"images",
+						"15",
+						"attributes"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
