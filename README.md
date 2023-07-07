@@ -11,35 +11,17 @@ A comprehensive Plain PHP & MySQL REST/RESTful API with Token-based Authenticati
 
 2- Advanced use of the Apache configuration .htaccess file for routing control.
 
+3- Token-based Authentication using a short-lived "Access Token" (20 minutes) and a longer-term "Refresh Token" (2 weeks).
+
 3- Totally Object-oriented design.
 
-4- Custom Autoloading Class (No external Composer Autoloader).
+4- Advanced SQL INNER JOIN clauses.
 
-5- Custom DotENV file reader Class (No external DotENV file reader package).
+5- HTTP Responses with Pagination.
 
-6- Middlewares implementation.
+6- File Upload.
 
-7- Protected Routes (using a custom Authentication Middleware Class).
-
-8- Entry Point/Script [index.php](public/index.php) file for the whole application.
-
-9- Login System utilizing a custom Session Class.
-
-10- Session Flash Messages.
-
-11- AJAX Live Search.
-
-12- Multilingual Support.
-
-13- Custom Pagination implementation.
-
-14- Database CRUD Operations Classes.
-
-15- File Upload.
-
-16- Registration, Validation, Authentication and Authorization.
-
-17- Responsive / Mobile first Design using Bootstrap.
+7- Registration, Validation, Authentication and Authorization.
 
 ## Application Routes:
 All the application routes are defined in the [index.php](public/index.php) file inside the "public" folder.
