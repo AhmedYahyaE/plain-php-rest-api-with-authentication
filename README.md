@@ -1,5 +1,5 @@
 # Plain PHP REST/RESTful API with Token-based Authentication and Image Uploading
-A comprehensive Plain PHP & MySQL REST/RESTful API with Token-based Authentication and Image Uploading feature. Totally Object-oriented design (OOP). The idea is an API for Tasks or To-Do Lists and their associated images. This project script is written entirely in plain PHP (OOP) and aims to demonstrate the implementation of an API with a Token-based Authentication without relying on any external libraries or frameworks.
+A comprehensive Plain PHP & MySQL REST/RESTful API with Token-based Authentication and Image Uploading feature. The API is built following the MVC (Model-View-Controller) Design Pattern, and is totally Object-oriented (OOP). The idea is an API for Tasks or To-Do Lists and their associated images. This project script is written entirely in plain PHP (OOP) and aims to demonstrate the implementation of an API with a Token-based Authentication without relying on any external libraries or frameworks.
 
 ## Screenshots:
 ***REST/REST API Constraints:***
