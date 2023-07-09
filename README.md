@@ -13,7 +13,7 @@ This project script is written entirely in plain PHP (OOP) and aims to showcase 
 ## Features:
 1- MVC Design Pattern.
 
-2- Advanced use of the .htaccess "per-directory" Apache configuration file for routing control and URL redirection (using the RewriteEngine).
+2- Advanced use of the ***.htaccess*** "per-directory" Apache configuration file for routing control and URL redirection (using the RewriteEngine). Check the API's [.htaccess file](v1/.htaccess).
 
 3- Token-based Authentication using a short-lived "Access Token" (20 minutes) and a longer-term "Refresh Token" (2 weeks).
 
@@ -195,7 +195,7 @@ This project script is written entirely in plain PHP (OOP) and aims to showcase 
 
 3- Navigate to the Database Connection Class file **[db.php](v1/controller/db.php)** and configure/edit/update it with your MySQL database credentials and other configuration settings.
 
-4- Apache Web Server must be used for serving the project in order for the .htaccess file to work, as we based all of the routing system and URL redirection on the .htaccess file RewriteEngine and RewriteRule-s. Start by typing in the API Endpoint: **`POST http://127.0.0.1/v1/users`** in your Postman to Sign up.
+4- Important Note: "***`Apache`***" Web Server must be used for serving this API in order for the ***.htaccess*** file to work, as I based all of the routing system work and URL redirection on the ***.htaccess*** file (RewriteEngine and RewriteRule-s). Start by typing in the API Endpoint: **`POST http://127.0.0.1/v1/users`** in your Postman to Sign up.
 
 - Credentials of a ready-to-use registered user account are: (Use this account to Log in and create a new 'Access Token' and 'Refresh Token' with the Endpoint: POST http://127.0.0.1/v1/sessions)
 
