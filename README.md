@@ -23,7 +23,7 @@ This project script is written entirely in plain PHP (OOP) and aims to showcase 
 
 6- HTTP Responses with Pagination.
 
-7- Advanced Error Handling involving custom Exception classes which return appropriate JSON error messages with the right HTTP Status Codes.
+7- Advanced Error Handling involving custom Exception classes which return appropriate JSON format error messages with the right HTTP Status Codes.
 
 8- Advanced SQL INNER JOIN clauses and CRUD operations.
 
