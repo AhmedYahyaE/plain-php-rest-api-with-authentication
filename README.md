@@ -40,7 +40,7 @@ This project script is written entirely in plain PHP (OOP) and aims to showcase 
 
 - "Content-Type" HTTP Request Header must be set to "application/json".
 
-- Mandatory fields in the JSON HTTP Request Body: fullname, username and password.
+- Mandatory fields in the JSON HTTP Request Body: fullname, username, and password.
 
 **2- Log in and Create a new session with a new Access Token and a new Refresh Token (POST):**
 
@@ -112,7 +112,7 @@ This project script is written entirely in plain PHP (OOP) and aims to showcase 
 
 - "Content-Type" HTTP Request Header must be set to "application/json".
 
-- Mandatory fields in the JSON HTTP Request Body: At least one of the fields: `title`, `description`, `deadline` and `completed`.
+- Mandatory fields in the JSON HTTP Request Body: At least one of the fields: `title`, `description`, `deadline`, and `completed`.
 
 **10- Get all 'Complete' tasks (GET):**
 
@@ -148,7 +148,7 @@ This project script is written entirely in plain PHP (OOP) and aims to showcase 
 
 - "multipart/form-data; boundary=" HTTP Request Header must be provided.
 
-- In Postman, click on "Body", then "form-data", then enter two fields: "attributes" and "imagefile" fields. For the "attributes" field, set it to "Text" and enter the Value as JSON (Example: {"title": "Image Title 1", "filename": "carimage"}) and don't mention the file extension in the file name. For the"imagefile" field, set it to "File", and upload an image file in the Value. Only .jgp, .gif or .png images are allowed.
+- In Postman, click on "Body", then "form-data", then enter two fields: "attributes" and "imagefile" fields. For the "attributes" field, set it to "Text" and enter the Value as JSON (Example: {"title": "Image Title 1", "filename": "carimage"}) and don't mention the file extension in the file name. For the"imagefile" field, set it to "File", and upload an image file in the Value. Only .jgp, .gif, or .png images are allowed.
 
 **14- Get (Download) an actual physical image of a certain task (of the authenticated/logged-in user):**
 
