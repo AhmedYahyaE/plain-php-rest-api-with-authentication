@@ -23,7 +23,7 @@ This project script is written entirely in plain PHP (OOP) and aims to showcase 
 
 6- HTTP Responses with Pagination.
 
-7- Advanced Error Handling involving custom Exception classes which return appropriate JSON format error messages with the right HTTP Status Codes.
+7- Advanced Error Handling involving custom Exception classes which return appropriate **JSON** format error messages with the right HTTP Status Codes.
 
 8- Advanced SQL INNER JOIN clauses and CRUD operations.
 
@@ -38,7 +38,7 @@ This project script is written entirely in plain PHP (OOP) and aims to showcase 
 
 **POST /v1/users**
 
-- "Content-Type" HTTP Request Header must be set to "application/json".
+- "Content-Type" HTTP Request Header must be set to "application/".
 
 - Mandatory fields in the JSON HTTP Request Body: fullname, username, and password.
 
