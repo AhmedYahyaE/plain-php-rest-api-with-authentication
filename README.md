@@ -98,7 +98,7 @@ A comprehensive Plain PHP & MySQL REST/RESTful API with Token-based Authenticati
 
 **PATCH /v1/tasks/{taskid}**
 
--- {taskid} Query String Parameter in the URL must be provided.
+- {taskid} Query String Parameter in the URL must be provided.
 
 - "Authorization" HTTP Request Header (Access Token) must be provided.
 
@@ -146,7 +146,7 @@ A comprehensive Plain PHP & MySQL REST/RESTful API with Token-based Authenticati
 
 **GET /tasks/{taskid}/images/{imageid}**
 
--- {taskid} and {imageid} Query String Parameters in the URL must be provided.
+- {taskid} and {imageid} Query String Parameters in the URL must be provided.
 
 - "Authorization" HTTP Request Header (Access Token) must be provided.
 
@@ -154,29 +154,29 @@ A comprehensive Plain PHP & MySQL REST/RESTful API with Token-based Authenticati
 
 **DELETE /tasks/{taskid}/images/{imageid}**
 
--- {taskid} and {imageid} Query String Parameters in the URL must be provided.
+- {taskid} and {imageid} Query String Parameters in the URL must be provided.
 
--- "Authorization" HTTP Request Header (Access Token) must be provided.
+- "Authorization" HTTP Request Header (Access Token) must be provided.
 
 **16- Get a certain image Attributes (of a certain task that belongs to the authenticated/logged-in user):**
 
 **GET /tasks/{taskid}/images/{imageid}/attributes**
 
--- The three of {taskid}, {imageid} and {attributes} Query String Parameters in the URL must be provided.
+- The three of {taskid}, {imageid} and {attributes} Query String Parameters in the URL must be provided.
 
--- "Authorization" HTTP Request Header (Access Token) must be provided.
+- "Authorization" HTTP Request Header (Access Token) must be provided.
 
 **17- Update a certain image Attributes (of a certain task that belongs to the authenticated/logged-in user):**
 
 **PATCH /tasks/{taskid}/images/{imageid}/attributes**
 
--- The three of {taskid}, {imageid} and {attributes} Query String Parameters in the URL must be provided.
+- The three of {taskid}, {imageid} and {attributes} Query String Parameters in the URL must be provided.
 
--- "Authorization" HTTP Request Header (Access Token) must be provided.
+- "Authorization" HTTP Request Header (Access Token) must be provided.
 
--- "Contetn-Type" HTTP Request Header must be set to "application/json".
+- "Contetn-Type" HTTP Request Header must be set to "application/json".
 
--- Mandatory fields in the JSON HTTP Request Body: At least one of the two fields: `title` and `filename`. N.B. File Name must be provided WITHOUT the file extension.
+- Mandatory fields in the JSON HTTP Request Body: At least one of the two fields: `title` and `filename`. N.B. File Name must be provided WITHOUT the file extension.
 
 ***\*\* Note: You can test the API Endpoints using Postman. Here is the Postman Collection .json file [Postman Collection](<Postman Collection of API Endpoints/Plain PHP REST API with Token-based Authentication and Image Uploading.postman_collection.json>) you can download and import in your Postman.***
 
