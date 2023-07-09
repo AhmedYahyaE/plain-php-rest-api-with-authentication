@@ -13,7 +13,7 @@ This project script is written entirely in plain PHP (OOP) and aims to showcase 
 ## Features:
 1- MVC Design Pattern.
 
-2- Advanced use of the Apache configuration .htaccess file for routing control and URL redirection (using the RewriteEngine).
+2- Advanced use of the .htaccess "per-directory" Apache configuration file for routing control and URL redirection (using the RewriteEngine).
 
 3- Token-based Authentication using a short-lived "Access Token" (20 minutes) and a longer-term "Refresh Token" (2 weeks).
 
