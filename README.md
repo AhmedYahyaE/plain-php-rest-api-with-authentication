@@ -6,7 +6,7 @@ The idea is an API for creating personal To-Do Lists (Tasks) and their associate
 This project script is written entirely in plain PHP (OOP) and aims to showcase the implementation of an API with Token-based Authentication without relying on any external libraries or frameworks.
 
 ## Screenshots:
-***REST/REST API Constraints:***
+***REST/RESTful API Constraints:***
 
 ![REST-API-Constraints](https://github.com/AhmedYahyaE/plain-php-rest-api-with-authentication/assets/118033266/36e5c1ff-10f3-49d9-a6d6-638227d6ab78)
 
