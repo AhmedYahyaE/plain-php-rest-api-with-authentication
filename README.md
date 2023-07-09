@@ -1,5 +1,9 @@
 # Plain PHP REST/RESTful API with Token-based Authentication and Image Uploading
-A comprehensive Plain PHP & MySQL REST/RESTful API with Token-based Authentication and Image Uploading feature. The API is built following the MVC (Model-View-Controller) Design Pattern, and is totally Object-oriented (OOP). The idea is an API for Tasks or To-Do Lists and their associated Images. This project script is written entirely in plain PHP (OOP) and aims to demonstrate the implementation of an API with a Token-based Authentication without relying on any external libraries or frameworks.
+A comprehensive Plain PHP & MySQL REST/RESTful API with Token-based Authentication and Image Uploading feature. The API is built following the MVC (Model-View-Controller) Design Pattern, and is totally Object-oriented (OOP).
+
+The idea is an API for creating personal To-Do Lists (Tasks) and their associated Images.
+
+This project script is written entirely in plain PHP (OOP) and aims to demonstrate the implementation of an API with a Token-based Authentication without relying on any external libraries or frameworks.
 
 ## Screenshots:
 ***REST/REST API Constraints:***
@@ -15,13 +19,15 @@ A comprehensive Plain PHP & MySQL REST/RESTful API with Token-based Authenticati
 
 4- Totally Object-oriented design.
 
-5- Advanced SQL INNER JOIN clauses.
+5- Protected Routes.
 
-6- HTTP Responses with Pagination.
+6- Advanced SQL INNER JOIN clauses.
 
-7- File Upload and File Download API Endpoints.
+7- HTTP Responses with Pagination.
 
-8- Registration, Validation, Authentication and Authorization.
+8- File Upload and File Download API Endpoints.
+
+9- Registration, Validation, Authentication and Authorization.
 
 ## API Endpoints:
 > ***\*\* Check the API Collection on my Postman Profile: https://www.postman.com/ahmed-yahya/workspace/my-public-portfolio-postman-workspace/collection/28181483-41805882-779b-42f7-a246-e96e32633ff5***
@@ -187,11 +193,11 @@ A comprehensive Plain PHP & MySQL REST/RESTful API with Token-based Authenticati
 
 3- Navigate to the Database Connection Class file **[db.php](v1/controller/db.php)** and configure/edit/update it with your MySQL database credentials and other configuration settings.
 
-4- Apache Web Server must be used in order for the .htaccess file to work, as we based all of the routing system and URLs redirection on the .htaccess file. Start by typing in the API Endpoint in your Postman **`POST http://127.0.0.1/v1/users`** to Sign up.
+4- Apache Web Server must be used for serving the project in order for the .htaccess file to work, as we based all of the routing system and URLs redirection on the .htaccess file RewriteEngine and RewriteRule-s. Start by typing in the API Endpoint: **`POST http://127.0.0.1/v1/users`** in your Postman to Sign up.
 
-5- Credentials of a ready-to-use registered user account are: (Use this account with the Endpoint: POST http://127.0.0.1/v1/sessions to Log in and create a new 'Access Token' and 'Refresh Token')
+- Credentials of a ready-to-use registered user account are: (Use this account to Log in and create a new 'Access Token' and 'Refresh Token' with the Endpoint: POST http://127.0.0.1/v1/sessions)
 
 > **Username**: **Ahmed**, **Password**: **123456**
 
 ## Contribution:
-Contributions to my personal backend Plain PHP MVC OOP Framework are most welcome! If you find any issues or have suggestions for improvements, want to add new features or want to contribute code or documentation, please open an issue or submit a pull request.
+Contributions to my API are most welcome! If you find any issues or have suggestions for improvements, want to add new features or want to contribute code or documentation, please open an issue or submit a pull request.
