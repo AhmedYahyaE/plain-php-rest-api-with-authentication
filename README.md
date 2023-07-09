@@ -178,24 +178,20 @@ A comprehensive Plain PHP & MySQL REST/RESTful API with Token-based Authenticati
 
 - Mandatory fields in the JSON HTTP Request Body: At least one of the two fields: `title` and `filename`. N.B. File Name must be provided WITHOUT the file extension.
 
-***\*\* Note: You can test the API Endpoints using Postman. Here is the Postman Collection .json file [Postman Collection](<Postman Collection of API Endpoints/Plain PHP REST API with Token-based Authentication and Image Uploading.postman_collection.json>) you can download and import in your Postman.***
+***\*\* Note: You can test the API Endpoints using Postman. Here is the API's Postman Collection .json file [Postman Collection file](<Postman Collection of API Endpoints/Plain PHP REST API with Token-based Authentication and Image Uploading.postman_collection.json>) you can download and import in your Postman.***
 
 ## Installation & Configuration:
 1- Clone the project or download it.
 
-2- Create a MySQL database named **\`my_plain_php_mvc_oop_framework\`** and import the database SQL Dump file [Database SQL Dump file](<Database - my_plain_php_mvc_oop_framework/my_plain_php_mvc_oop_framework database - SQL Dump File - PhpMyAdmin Export.sql>).
+2- Create a MySQL database named **\`tasksdb\`** and import the database SQL Dump file [Database SQL Dump file](<Database - tasksdb/tasksdb database - SQL Dump File - PhpMyAdmin Export.sql>).
 
-3- Navigate to the ***.env*** file **[.env](.env)** and configure/edit/update it with your MySQL database credentials and other configuration settings.
+3- Navigate to the Database Connection Class file **[db.php](v1/controller/db.php)** and configure/edit/update it with your MySQL database credentials and other configuration settings.
 
-4- Apache Web Server must be used in order for the .htaccess file to work. Navigate to the project "public" folder/directory (where the Entry Point [index.php](public/index.php) file is placed) using the **`cd`** terminal command, and then start your PHP built-in Development Web Server by running the command: **`http://127.0.0.1/v1/users`**.
+4- Apache Web Server must be used in order for the .htaccess file to work, as we based all of the routing system and URLs redirection on the .htaccess file. Start by typing in the API Endpoint in your Postman **`POST http://127.0.0.1/v1/users`** to Sign up.
 
-***\*\*Note: Whatever your Web Server is, you must configure its Web Root Directory to be the application "public" folder which contains the [index.php](public/index.php) file (Entry Point) in order for the Routing System to function properly.***
+5- Credentials of a ready-to-use registered user account are: (Use this account with the Endpoint: POST http://127.0.0.1/v1/sessions to Log in and create a new 'Access Token' and 'Refresh Token')
 
-5- In your browser, go to http://127.0.0.1/v1/users.
-
-6- Credentials of a ready-to-use registered user account are:
-
-> **Email**: **ahmed.yahya@example.com**, **Password**: **12345678**
+> **Username**: **Ahmed**, **Password**: **123456**
 
 ## Contribution:
 Contributions to my personal backend Plain PHP MVC OOP Framework are most welcome! If you find any issues or have suggestions for improvements, want to add new features or want to contribute code or documentation, please open an issue or submit a pull request.
