@@ -1,9 +1,9 @@
 # Plain PHP REST/RESTful API with Token-based Authentication and Image Uploading
 A Comprehensive Plain PHP & MySQL REST/RESTful API with Token-based Authentication and Image Uploading feature. The API is built following the MVC (Model-View-Controller) Design Pattern, and is totally Object-oriented (OOP).
 
-The idea is an API for creating personal To-Do Lists (Tasks) and their associated Images. You can create a To-Do list and assign an image to every one of its tasks.
+The idea is an API for creating personal To-Do Lists (Tasks) and their associated Images. You can create a To-Do List and assign an image to each task.
 
-This project script is written entirely in plain PHP (OOP) and aims to demonstrate the implementation of an API with a Token-based Authentication without relying on any external libraries or frameworks.
+This project script is written entirely in plain PHP (OOP) and aims to showcase the implementation of an API with Token-based Authentication without relying on any external libraries or frameworks.
 
 ## Screenshots:
 ***REST/REST API Constraints:***
@@ -13,7 +13,7 @@ This project script is written entirely in plain PHP (OOP) and aims to demonstra
 ## Features:
 1- MVC Design Pattern.
 
-2- Advanced use of the Apache configuration .htaccess file for routing control and URLs redirection.
+2- Advanced use of the Apache configuration .htaccess file for routing control and URL redirection.
 
 3- Token-based Authentication using a short-lived "Access Token" (20 minutes) and a longer-term "Refresh Token" (2 weeks).
 
@@ -195,7 +195,7 @@ This project script is written entirely in plain PHP (OOP) and aims to demonstra
 
 3- Navigate to the Database Connection Class file **[db.php](v1/controller/db.php)** and configure/edit/update it with your MySQL database credentials and other configuration settings.
 
-4- Apache Web Server must be used for serving the project in order for the .htaccess file to work, as we based all of the routing system and URLs redirection on the .htaccess file RewriteEngine and RewriteRule-s. Start by typing in the API Endpoint: **`POST http://127.0.0.1/v1/users`** in your Postman to Sign up.
+4- Apache Web Server must be used for serving the project in order for the .htaccess file to work, as we based all of the routing system and URL redirection on the .htaccess file RewriteEngine and RewriteRule-s. Start by typing in the API Endpoint: **`POST http://127.0.0.1/v1/users`** in your Postman to Sign up.
 
 - Credentials of a ready-to-use registered user account are: (Use this account to Log in and create a new 'Access Token' and 'Refresh Token' with the Endpoint: POST http://127.0.0.1/v1/sessions)
 
