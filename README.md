@@ -191,15 +191,15 @@ This project script is written entirely in plain PHP (OOP) and aims to showcase 
 ## Installation & Configuration:
 1- Clone the project or download it.
 
-2- Create a MySQL database named **\`tasksdb\`** and import the database SQL Dump file [Database SQL Dump file](<Database - tasksdb/tasksdb database - SQL Dump File - PhpMyAdmin Export.sql>).
+2- Create a MySQL database named **\`tasksdb\`** and import the database SQL Dump file **[tasksdb Database SQL Dump File](<Database - tasksdb/tasksdb database - SQL Dump File - PhpMyAdmin Export.sql>)**.
 
 3- Navigate to the Database Connection Class file **[db.php](v1/controller/db.php)** and configure/edit/update it with your MySQL database credentials and other configuration settings.
 
-4- Important Note: "***`Apache`***" Web Server must be used for serving this API in order for the ***.htaccess*** file to work, as I based all of the routing system work and URL redirection/URL Rewriting on the ***.htaccess*** file (RewriteEngine and RewriteRule-s). Check the API's ***[.htaccess file](v1/.htaccess)***. Start by typing in the API Endpoint: **`POST http://127.0.0.1/v1/users`** in your Postman to Sign up.
+4- Important Note: "**`Apache`**" Web Server must be used for serving this API in order for the ***.htaccess*** file to work, as I based all of the routing system work and URL redirection/URL Rewriting on the ***.htaccess*** file (RewriteEngine and RewriteRule-s). Check the API's ***[.htaccess file](v1/.htaccess)***. Start by typing in the API Endpoint: **`POST http://127.0.0.1/v1/users`** in your Postman to Sign up.
 
-- Credentials of a ready-to-use registered user account are: (Use this account to Log in and create a new 'Access Token' and 'Refresh Token' with the Endpoint: POST http://127.0.0.1/v1/sessions)
+- Credentials of a ready-to-use registered user account are: (Use this account to Log in and create a new 'Access Token' and 'Refresh Token' with the following Endpoint: POST http://127.0.0.1/v1/sessions)
 
 > **Username**: **Ahmed**, **Password**: **123456**
 
 ## Contribution:
-Contributions to my API are most welcome! If you find any issues or have suggestions for improvements, want to add new features or want to contribute code or documentation, please open an issue or submit a pull request.
+Contributions to my plain PHP REST/RESTful API are most welcome! If you find any issues or have suggestions for improvements, want to add new features or want to contribute code or documentation, please open an issue or submit a pull request.
