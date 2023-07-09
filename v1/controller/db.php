@@ -13,7 +13,7 @@ class DB { // Read about scaling the MySQL databases for large projects (splitti
         // database connection muse be a singleton object (there must be a one connection only across your whole project/application, and you just reuse it whenever you need it)
 
         if (self::$writeDBConnection === null) { // to start initiation of the connection
-            self::$writeDBConnection = new PDO('mysql:host=localhost;dbname=tasksdb;charset=utf8', 'root', '0000'); // Create the database connection
+            self::$writeDBConnection = new PDO('mysql:host=localhost;dbname=tasksdb;charset=utf8', 'root', ''); // Create the database connection
             
             // Setting some attributes on the connection:
             self::$writeDBConnection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); // the error mode is Exception. They are good because you can catch them, deal with them, and they are a good way to error handling in PHP
@@ -28,7 +28,7 @@ class DB { // Read about scaling the MySQL databases for large projects (splitti
     public static function connectReadDB() {
         // Database connection must be a singleton object (there must be a one connection only across/throughout your whole project/application, and you just reuse it whenever you need it)
         if (self::$readDBConnection === null) { // to start initiation of the connection
-            self::$readDBConnection = new PDO('mysql:host=localhost;dbname=tasksdb;charset=utf8', 'root', '0000'); // Create the database connection
+            self::$readDBConnection = new PDO('mysql:host=localhost;dbname=tasksdb;charset=utf8', 'root', ''); // Create the database connection
             
             // Setting some attributes on the connection:
             self::$readDBConnection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); // the error mode is Exception. They are good because you can catch them, deal with them, and they are a good way to error handling in PHP

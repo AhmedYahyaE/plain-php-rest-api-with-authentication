@@ -50,7 +50,7 @@ RewriteRule ^sessions/([0-9]+)$ controller/sessions.php?sessionid=$1 [L]
 
 # Images:
 
-# Get or Update a certain image Attributes (GET or PATCH)
+# Retrieve or Update a certain image Attributes (GET or PATCH)
 RewriteRule ^tasks/([0-9]+)/images/([0-9]+)/attributes$ controller/images.php?taskid=$1&imageid=$2&attributes=true [L]
 
 # Handle Download a certain actual physical image of a certain (id) task (GET)    Or    Delete a certain physical image of a certain task (DELETE)
