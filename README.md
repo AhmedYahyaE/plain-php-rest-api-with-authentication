@@ -3,7 +3,7 @@ A Comprehensive Plain PHP & MySQL REST/RESTful API with Token-based Authenticati
 
 The idea is an API for creating personal To-Do Lists (Tasks) and their associated Images. You can create a To-Do List and assign an image to each task.
 
-This project script is written entirely in plain PHP (OOP) and aims to showcase the implementation of an API with Token-based Authentication without relying on any external libraries or frameworks.
+This project script is entirely written in plain PHP (OOP) and aims to showcase the implementation of an API with Token-based Authentication without relying on any external libraries or frameworks.
 
 ## Screenshots:
 ***REST/RESTful API Constraints:***
