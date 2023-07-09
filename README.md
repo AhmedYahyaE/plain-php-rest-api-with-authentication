@@ -1,7 +1,7 @@
 # Plain PHP REST/RESTful API with Token-based Authentication and Image Uploading
-A comprehensive Plain PHP & MySQL REST/RESTful API with Token-based Authentication and Image Uploading feature. The API is built following the MVC (Model-View-Controller) Design Pattern, and is totally Object-oriented (OOP).
+A Comprehensive Plain PHP & MySQL REST/RESTful API with Token-based Authentication and Image Uploading feature. The API is built following the MVC (Model-View-Controller) Design Pattern, and is totally Object-oriented (OOP).
 
-The idea is an API for creating personal To-Do Lists (Tasks) and their associated Images.
+The idea is an API for creating personal To-Do Lists (Tasks) and their associated Images. You can create a To-Do list and assign an image to every one of its tasks.
 
 This project script is written entirely in plain PHP (OOP) and aims to demonstrate the implementation of an API with a Token-based Authentication without relying on any external libraries or frameworks.
 
@@ -13,7 +13,7 @@ This project script is written entirely in plain PHP (OOP) and aims to demonstra
 ## Features:
 1- MVC Design Pattern.
 
-2- Advanced use of the Apache configuration .htaccess file for routing control.
+2- Advanced use of the Apache configuration .htaccess file for routing control and URLs redirection.
 
 3- Token-based Authentication using a short-lived "Access Token" (20 minutes) and a longer-term "Refresh Token" (2 weeks).
 
@@ -21,13 +21,15 @@ This project script is written entirely in plain PHP (OOP) and aims to demonstra
 
 5- Protected Routes.
 
-6- Advanced SQL INNER JOIN clauses.
+6- HTTP Responses with Pagination.
 
-7- HTTP Responses with Pagination.
+7- Advanced Error Handling involving custom Exception classes which return appropriate JSON error messages with the right HTTP Status Codes.
 
-8- File Upload and File Download API Endpoints.
+8- Advanced SQL INNER JOIN clauses and CRUD operations.
 
-9- Registration, Validation, Authentication and Authorization.
+9- File Upload and File Download API Endpoints.
+
+10- Registration, Validation, Authentication, and Authorization.
 
 ## API Endpoints:
 > ***\*\* Check the API Collection on my Postman Profile: https://www.postman.com/ahmed-yahya/workspace/my-public-portfolio-postman-workspace/collection/28181483-41805882-779b-42f7-a246-e96e32633ff5***
@@ -36,15 +38,15 @@ This project script is written entirely in plain PHP (OOP) and aims to demonstra
 
 **POST /v1/users**
 
-- "Contetn-Type" HTTP Request Header must be set to "application/json".
+- "Content-Type" HTTP Request Header must be set to "application/json".
 
-- Mandatory fields in the JSON HTTP Requet Body: fullname, username and password.
+- Mandatory fields in the JSON HTTP Request Body: fullname, username and password.
 
 **2- Log in and Create a new session with a new Access Token and a new Refresh Token (POST):**
 
 **POST /v1/sessions**
 
-- "Contetn-Type" HTTP Request Header must be set to "application/json".
+- "Content-Type" HTTP Request Header must be set to "application/json".
 
 - Mandatory fields in the JSON HTTP Request Body: username and password.
 
@@ -62,7 +64,7 @@ This project script is written entirely in plain PHP (OOP) and aims to demonstra
 
 - {sessionid} Query String Parameter in the URL must be provided.
 
-- "Contetn-Type" HTTP Request Header must be set to "application/json".
+- "Content-Type" HTTP Request Header must be set to "application/json".
 
 - "Refresh Token" must be provided as JSON in the HTTP Request Body (Not as an 'Authorization' HTTP Request Header).
 
@@ -74,7 +76,7 @@ This project script is written entirely in plain PHP (OOP) and aims to demonstra
 
 - "Authorization" HTTP Request Header (Access Token) must be provided.
 
-- "Contetn-Type" HTTP Request Header must be set to "application/json".
+- "Content-Type" HTTP Request Header must be set to "application/json".
 
 - Mandatory fields in the JSON HTTP Request Body: `title` and `completed`.
 
@@ -108,7 +110,7 @@ This project script is written entirely in plain PHP (OOP) and aims to demonstra
 
 - "Authorization" HTTP Request Header (Access Token) must be provided.
 
-- "Contetn-Type" HTTP Request Header must be set to "application/json".
+- "Content-Type" HTTP Request Header must be set to "application/json".
 
 - Mandatory fields in the JSON HTTP Request Body: At least one of the fields: `title`, `description`, `deadline` and `completed`.
 
@@ -180,7 +182,7 @@ This project script is written entirely in plain PHP (OOP) and aims to demonstra
 
 - "Authorization" HTTP Request Header (Access Token) must be provided.
 
-- "Contetn-Type" HTTP Request Header must be set to "application/json".
+- "Content-Type" HTTP Request Header must be set to "application/json".
 
 - Mandatory fields in the JSON HTTP Request Body: At least one of the two fields: `title` and `filename`. N.B. File Name must be provided WITHOUT the file extension.
 
