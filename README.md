@@ -15,7 +15,7 @@ This project script is entirely written in plain PHP (OOP) and aims to showcase 
 
 2- Advanced use of the ***.htaccess*** "per-directory" Apache configuration file for routing control and URL redirection (URL Rewriting using the RewriteEngine). Check the API's ***[.htaccess file](v1/.htaccess)***.
 
-3- Token-based Authentication using a short-lived "Access Token" (20 minutes) and a longer-term "Refresh Token" (2 weeks).
+3- Token-based Authentication using a short-lived "**Access Token**" (`20 minutes`) and a longer-term "**Refresh Token**" (`2 weeks`).
 
 4- Totally Object-oriented design.
 
@@ -58,7 +58,7 @@ This project script is entirely written in plain PHP (OOP) and aims to showcase 
 
 - "Authorization" HTTP Request Header (Access Token) must be provided.
 
-**4- Refresh a session (update a session to get a new access token and a new refresh token instead of the expired access token) (PATCH):**
+**4- Refresh a session (update a session to get a new Access Token and a new Refresh Token instead of the expired Access Token) (PATCH):**
 
 **PATCH /v1/sessions/{sessionid}**
 
@@ -197,7 +197,7 @@ This project script is entirely written in plain PHP (OOP) and aims to showcase 
 
 4- Important Note: "**`Apache`**" Web Server must be used for serving this API in order for the ***.htaccess*** file to work, as I based all of the routing system work and URL redirection/URL Rewriting on the ***.htaccess*** file (RewriteEngine and RewriteRule-s). Check the API's ***[.htaccess file](v1/.htaccess)***. Start by typing in the API Endpoint: **`POST http://127.0.0.1/v1/users`** in your Postman to Sign up.
 
-- Credentials of a ready-to-use registered user account are: (Use this account to Log in and create a new session i.e. get a new "Access Token" and "Refresh Token" with the following Endpoint: **`POST http://127.0.0.1/v1/sessions`**)
+- Credentials of a ready-to-use registered user account are: (Use this account to Log in and create a new session i.e. get a new "**Access Token**" and "**Refresh Token**" with the following Endpoint: **`POST http://127.0.0.1/v1/sessions`**)
 
 > **Username**: **Ahmed**, **Password**: **123456**
 
