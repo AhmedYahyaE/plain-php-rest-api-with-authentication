@@ -34,6 +34,8 @@ This project script is entirely written in plain PHP (OOP) and aims to showcase 
 ## API Endpoints:
 > ***\*\* Check the API Collection on my Postman Profile: https://www.postman.com/ahmed-yahya/workspace/my-public-portfolio-postman-workspace/collection/28181483-41805882-779b-42f7-a246-e96e32633ff5***
 
+> ***\*\* Also, you can test the API Endpoints using Postman. Here is the API's Postman Collection .json file [Postman Collection file](<Postman Collection of API Endpoints/Plain PHP REST API with Token-based Authentication and Image Uploading.postman_collection.json>) you can download and import in your Postman.***
+
 **1- Register/Sign up/Create a new user (POST):**
 
 **POST /v1/users**
@@ -185,8 +187,6 @@ This project script is entirely written in plain PHP (OOP) and aims to showcase 
 - "Content-Type" HTTP Request Header must be set to "application/json".
 
 - Mandatory fields in the JSON HTTP Request Body: At least one of the two fields: `title` and `filename`. N.B. File Name must be provided WITHOUT the file extension.
-
-***\*\* Note: You can test the API Endpoints using Postman. Here is the API's Postman Collection .json file [Postman Collection file](<Postman Collection of API Endpoints/Plain PHP REST API with Token-based Authentication and Image Uploading.postman_collection.json>) you can download and import in your Postman.***
 
 ## Installation & Configuration:
 1- Clone the project or download it.
